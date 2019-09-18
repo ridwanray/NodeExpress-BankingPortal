@@ -13,7 +13,7 @@ const userData = fs.readFileSync('src/json/users.json', 'utf8')
 const users = JSON.parse(userData) 
 
 app.get('/', (req, res) => {
-    res.render('index ', {title: 'Account Summary', accounts: accounts})
+    res.render('index ', {title: 'Account Summary'}, {accounts: accounts})
 })
 
 app.get('/savings', (req, res) => {
@@ -29,7 +29,7 @@ app.get('/credit', (req, res) => {
 })
 
 app.get('/profile', (req, res) => {
-    res.render('account', {user: users[0]})
+    res.render('profile', {user: users[0]})
 })
 
 app.listen(3000, () => {
